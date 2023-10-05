@@ -1,22 +1,13 @@
 import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({
+export const stylesGeral = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#001E36',
-    alignItems: 'center',
     justifyContent: 'center',
-    textAlign: 'left'
-  },
-  inputLogin: {
-    backgroundColor: '#474747',
-    width: 350,
-    paddingVertical: 24,
+    textAlign: 'left',
     paddingHorizontal: 10,
-    alignItems: 'center',
-    gap: 10,
-    borderRadius: 5,
-    marginBottom: 20,
+    paddingVertical: 24, 
   },
   texto: {
     color: '#fff',
@@ -32,10 +23,6 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  imagem: {
-    width: 240,
-    height: 180,
-  },
   esquerda: {
     alignItems: 'left'
   },
@@ -49,6 +36,7 @@ export const styles = StyleSheet.create({
   },
   subtitulo: {
     marginBottom: 25,
+    marginHorizontal: 'auto',
   },
   flex: {
     flexDirection: 'row',
@@ -70,24 +58,22 @@ export const styles = StyleSheet.create({
   checkboxContainer: {
     flexDirection: 'row',
   },
-  line: {
-    width: 120,
-    height: 1,
-    backgroundColor: '#fff',
-  },
-  icon: {
-    width: 48,
-    height: 48,
-    backgroundColor: '#fff',
-    borderColor: '#000',
-    borderWidth: 1,
-    marginHorizontal: 16,
-    borderRadius: 5,
-    backgroundColor: '#a5a5a5',
-  },
   alinhar: {
     alignItems: 'center',
     marginBottom: 50,
   },
+  center: {
+    flexDirection: 'row',
+    marginHorizontal: 'auto',
+  },
+  inputLogin: {
+    backgroundColor: '#474747',
+    width: '100%',
+    paddingVertical: 24,
+    paddingHorizontal: 10,
+    alignItems: 'center',
+    gap: 10,
+    borderRadius: 5,
+    marginBottom: 20,
+  },
 });
-
