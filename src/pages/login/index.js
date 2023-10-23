@@ -3,6 +3,7 @@ import { Text, View, TextInput, Image, TouchableOpacity, CheckBox } from 'react-
 import { styles } from './styles';
 import { stylesGeral } from '../styleGeral.js';
 import { useState } from 'react';
+import Button from '../componentes/button';
 
 export default function login({navigation}) {
   const [isSelected, setSelection] = useState(false);
@@ -55,11 +56,10 @@ export default function login({navigation}) {
           </Text>
         </View>
         <View style={stylesGeral.flex}>
-          <TouchableOpacity style={stylesGeral.btn} onTouchEnd={openSignup}>
-            <Text>
-              Cadastrar-se
-            </Text>
-          </TouchableOpacity>
+          <Button
+          onPress={openSignup}
+          text="Cadastrar-se"
+          type="primary"/>
           <TouchableOpacity style={stylesGeral.btn}>
             <Text>
               Entrar
