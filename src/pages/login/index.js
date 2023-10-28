@@ -1,17 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, Image, TouchableOpacity, CheckBox } from 'react-native';
+import { Text, View, TextInput, Image, TouchableOpacity, CheckBox, Touchable } from 'react-native';
 import { styles } from './styles';
 import { stylesGeral } from '../styleGeral.js';
 import { useState } from 'react';
 import Button from '../componentes/button';
+import TxtInput from '../componentes/input';
+import Txt from '../componentes/text';
 
-export default function login({navigation}) {
+export default function login({ navigation }) {
   const [isSelected, setSelection] = useState(false);
 
-  function openSignup(){
+  function openSignup() {
     navigation.navigate('Signup');
   }
-  function openRecover(){
+  function openRecover() {
     navigation.navigate('Recover');
   }
 
@@ -19,25 +21,29 @@ export default function login({navigation}) {
 
     <View style={stylesGeral.container}>
       <Image
-        source={require('./imgs/logo.png')}
+        source={require('../../../assets/logo.png')}
         style={styles.imagem}
       />
-      <Text style={[stylesGeral.texto, stylesGeral.titulo]}>Entrar</Text>
-      <Text style={[stylesGeral.texto, stylesGeral.subtitulo]}>Com o seu e-mail e senha</Text>
+      <Txt 
+      type='titulo'
+      texto='Entrar'/>
+      <Txt 
+      type='subTitulo'
+      texto='Com o seu e-mail e senha'/>
       <View>
         <View style={stylesGeral.esquerda}>
-          <Text style={[stylesGeral.label,]}>Digite o seu e-mail</Text>
-          <TextInput
-            style={stylesGeral.inputLogin}
-            placeholder='E-mail'
-          />
+          <Txt 
+          type='linha'
+          texto='Digite o seu e-mail'/>
+          <TxtInput
+            text="E-mail"
+            type="primary" />
         </View>
         <View style={stylesGeral.esquerda}>
           <Text style={[stylesGeral.label,]}>Digite a sua senha</Text>
-          <TextInput
-            style={stylesGeral.inputLogin}
-            placeholder='Senha'
-          />
+          <TxtInput
+            text="Senha"
+            type="primary" />
         </View>
         <View style={styles.flex}>
           <View style={styles.checkboxContainer}>
@@ -50,21 +56,19 @@ export default function login({navigation}) {
               Lembrar minha senha
             </Text>
           </View>
-          <Text style={stylesGeral.label}
-           onTouchEnd={openRecover}>
-            Esqueci minha senha
-          </Text>
+          <TouchableOpacity style={stylesGeral.label}
+            onTouchEnd={openRecover}>
+            <Text style={stylesGeral.label}>Esqueci minha senha</Text>
+          </TouchableOpacity>
         </View>
         <View style={stylesGeral.flex}>
           <Button
-          onPress={openSignup}
-          text="Cadastrar-se"
-          type="primary"/>
-          <TouchableOpacity style={stylesGeral.btn}>
-            <Text>
-              Entrar
-            </Text>
-          </TouchableOpacity>
+            onPress={openSignup}
+            text="Cadastrar-se"
+            type="primary" />
+          <Button
+            text="Entrar"
+            type="primary" />
         </View>
         <View style={[stylesGeral.flex, styles.alinhar]}>
           <View style={stylesGeral.line}></View>
@@ -73,14 +77,14 @@ export default function login({navigation}) {
         </View>
       </View>
       <View style={stylesGeral.center}>
-          <Image
-            source={require('./imgs/google.png')}
-            style={styles.icon}
-          />
-          <Image
-            source={require('./imgs/facebook.png')}
-            style={styles.icon}
-          />
+        <Image
+          source={require('../../../assets/google.png')}
+          style={styles.icon}
+        />
+        <Image
+          source={require('../../../assets/facebook.png')}
+          style={styles.icon}
+        />
       </View>
       <StatusBar style="auto" />
     </View>

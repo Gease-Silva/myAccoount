@@ -3,13 +3,16 @@ import { Text, View, TextInput, Image, TouchableOpacity, CheckBox } from 'react-
 import { stylesGeral } from '../styleGeral.js';
 import { styles } from './styles.js';
 import { useState } from 'react';
+import Button from '../componentes/button';
+import TxtInput from '../componentes/input';
+import text from '../componentes/text';
 
 export default function app() {
     return (
         <View style={stylesGeral.container}>
             <View>
                 <Image
-                    source={require('./imgs/logo.png')}
+                    source={require('../../../assets/logo.png')}
                     style={styles.imagem}
                 />
                 <Text style={[stylesGeral.texto, stylesGeral.titulo]}>
@@ -19,32 +22,30 @@ export default function app() {
             <View>
                 <View style={stylesGeral.esquerda}>
                     <Text style={[stylesGeral.texto]}>Digite o seu nome:</Text>
-                    <TextInput
-                        style={stylesGeral.inputLogin}
-                        placeholder='Nome'
+                    <TxtInput
+                        type="primary"
+                        text='Nome'
                     />
                 </View>
                 <View style={stylesGeral.esquerda}>
                     <Text style={[stylesGeral.texto]}>Digite o seu CPF:</Text>
-                    <TextInput
-                        style={stylesGeral.inputLogin}
-                        placeholder='CPF'
+                    <TxtInput 
+                        type="primary"
+                        text='CPF'
                         keyboardType="numeric"
                     />
                 </View>
                 <View style={stylesGeral.esquerda}>
                     <Text style={[stylesGeral.texto]}>Digite o seu E-mail:</Text>
-                    <TextInput
-                        style={stylesGeral.inputLogin}
-                        placeholder='E-mail'
+                    <TxtInput
+                        type="primary"
+                        text='E-mail'
                     />
                 </View>
-                <View>
-                    <TouchableOpacity style={[stylesGeral.btn, stylesGeral.center]}>
-                        <Text>
-                            Enviar
-                        </Text>
-                    </TouchableOpacity>
+                <View style={{alignItems: 'center'}}>
+                    <Button
+                        text="Enviar"
+                        type="primary" />
                 </View>
             </View>
         </View>

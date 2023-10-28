@@ -2,8 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View, TextInput, Image, TouchableOpacity, CheckBox } from 'react-native';
 import { stylesGeral } from '../styleGeral.js';
 import { useState } from 'react';
+import Button from '../componentes/button';
+import TxtInput from '../componentes/input';
 
 export default function app() {
+
+    function openLogin() {
+        navigation.navigate('Login');
+    }
+
     return (
         <View style={stylesGeral.container}>
             <View>
@@ -17,48 +24,47 @@ export default function app() {
             <View>
                 <View style={stylesGeral.esquerda}>
                     <Text style={[stylesGeral.texto]}>Digite o seu nome:</Text>
-                    <TextInput
-                        style={stylesGeral.inputLogin}
-                        placeholder='Nome'
+                    <TxtInput
+                        type="primary"
+                        text='Nome'
                     />
                 </View>
                 <View style={stylesGeral.esquerda}>
                     <Text style={[stylesGeral.texto]}>Digite o seu CPF:</Text>
-                    <TextInput
-                        style={stylesGeral.inputLogin}
-                        placeholder='CPF'
+                    <TxtInput
+                        type="primary"
+                        text='CPF'
                         keyboardType="numeric"
                     />
                 </View>
                 <View style={stylesGeral.esquerda}>
                     <Text style={[stylesGeral.texto]}>Digite o seu E-mail:</Text>
-                    <TextInput
-                        style={stylesGeral.inputLogin}
-                        placeholder='E-mail'
+                    <TxtInput
+                        type="primary"
+                        text='E-mail'
                     />
                 </View>
                 <View style={stylesGeral.esquerda}>
                     <Text style={[stylesGeral.texto]}>Digite uma senha:</Text>
-                    <TextInput
-                        style={stylesGeral.inputLogin}
-                        placeholder='Senha'
+                    <TxtInput
+                        type="primary"
+                        text='Senha'
                         keyboardType="visible-password"
                     />
                 </View>
                 <View style={stylesGeral.esquerda}>
                     <Text style={[stylesGeral.texto]}>Confirme sua senha:</Text>
-                    <TextInput
-                        style={stylesGeral.inputLogin}
-                        placeholder='Senha'
+                    <TxtInput
+                        type="primary"
+                        text='Senha'
                         keyboardType="visible-password"
                     />
                 </View>
-                <View>
-                    <TouchableOpacity style={[stylesGeral.btn , stylesGeral.center]}>
-                        <Text>
-                            Cadastrar-se
-                        </Text>
-                    </TouchableOpacity>
+                <View style={{ alignItems: 'center' }}>
+                    <Button
+                        onPress={openLogin}
+                        text="Cadastrar-se"
+                        type="primary" />
                 </View>
             </View>
         </View>
