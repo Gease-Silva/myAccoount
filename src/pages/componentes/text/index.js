@@ -18,7 +18,6 @@ export default function Txt({ type, texto }) {
         },
         subtitulo: {
             marginBottom: 25,
-            marginHorizontal: 'auto',
             color: '#FFF',
         }
     }

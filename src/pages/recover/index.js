@@ -5,9 +5,14 @@ import { styles } from './styles.js';
 import { useState } from 'react';
 import Button from '../componentes/button';
 import TxtInput from '../componentes/input';
-import text from '../componentes/text';
+import Txt from '../componentes/text';
 
-export default function app() {
+export default function app({ navigation }) {
+
+    function openSuccess() {
+        navigation.navigate('SuccessRecover');
+      }
+
     return (
         <View style={stylesGeral.container}>
             <View>
@@ -44,6 +49,7 @@ export default function app() {
                 </View>
                 <View style={{alignItems: 'center'}}>
                     <Button
+                    onPress={openSuccess}
                         text="Enviar"
                         type="primary" />
                 </View>

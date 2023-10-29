@@ -10,6 +10,9 @@ import Txt from '../componentes/text';
 export default function login({ navigation }) {
   const [isSelected, setSelection] = useState(false);
 
+  function openHome() {
+    navigation.navigate('Home');
+  }
   function openSignup() {
     navigation.navigate('Signup');
   }
@@ -24,17 +27,17 @@ export default function login({ navigation }) {
         source={require('../../../assets/logo.png')}
         style={styles.imagem}
       />
-      <Txt 
-      type='titulo'
-      texto='Entrar'/>
-      <Txt 
-      type='subTitulo'
-      texto='Com o seu e-mail e senha'/>
+      <View style={{alignItems: 'center'}}><Txt
+        type='titulo'
+        texto='Entrar' />
+      <Txt
+        type='subTitulo'
+        texto='Com o seu e-mail e senha' /></View>
       <View>
         <View style={stylesGeral.esquerda}>
-          <Txt 
-          type='linha'
-          texto='Digite o seu e-mail'/>
+          <Txt
+            type='linha'
+            texto='Digite o seu e-mail' />
           <TxtInput
             text="E-mail"
             type="primary" />
@@ -67,6 +70,7 @@ export default function login({ navigation }) {
             text="Cadastrar-se"
             type="primary" />
           <Button
+            onPress={openHome}
             text="Entrar"
             type="primary" />
         </View>

@@ -5,11 +5,11 @@ import { useState } from 'react';
 import Button from '../componentes/button';
 import TxtInput from '../componentes/input';
 
-export default function app() {
+export default function app({ navigation }) {
 
-    function openLogin() {
-        navigation.navigate('Login');
-    }
+    function openSuccess() {
+        navigation.navigate('SuccessSignup');
+      }
 
     return (
         <View style={stylesGeral.container}>
@@ -62,7 +62,7 @@ export default function app() {
                 </View>
                 <View style={{ alignItems: 'center' }}>
                     <Button
-                        onPress={openLogin}
+                        onPress={openSuccess}
                         text="Cadastrar-se"
                         type="primary" />
                 </View>

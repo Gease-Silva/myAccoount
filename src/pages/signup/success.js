@@ -15,12 +15,7 @@ export default function app({ navigation }) {
 
     return (
         <View style={stylesGeral.container}>
-            <View>
-                <Image
-                    source={require('../../../assets/logo.png')}
-                    style={styles.imagem}
-                />
-            </View>
+        
             <View >
                 <View style={{ marginBottom: '100%', alignItems: 'center' }}>
                     <Txt
@@ -29,7 +24,10 @@ export default function app({ navigation }) {
 
                     <Txt
                         type='subTitulo'
-                        texto='Foi enviado um e-mail para redefinir a sua senha' />
+                        texto='Sua conta foi cadastrada com sucesso!' />
+                    <Txt
+                        type='subTitulo'
+                        texto='Volte a tela inicial para terminar o seu login' />
 
                 </View>
                 <View style={{ alignItems: 'center' }}>
