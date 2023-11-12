@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({
+export default StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: 10,
-        paddingVertical: 24,
+        paddingTop: 24,
     },
     background: {
         position: 'absolute',
@@ -14,17 +14,16 @@ export const styles = StyleSheet.create({
         height: '100%',
     },
     carteira: {
+        marginTop: 10,
         height: 120,
         backgroundColor: '#b5ddda',
         borderRadius: 20,
         paddingTop: 13,
         paddingHorizontal: 10,
-        textAlign: 'left',
     },
     reais: {
         height: 77,
         marginHorizontal: 61,
-        color: '#000',
         backgroundColor: '#EBE789',
         marginBottom: 0,
         borderTopStartRadius: 25,
@@ -54,13 +53,15 @@ export const styles = StyleSheet.create({
     },
     opcoes: {
         marginVertical: 21,  
+        flexDirection: "row",
     },
     diaMes: {
         height: 50,
         borderRadius: 37,
+        flexDirection: 'row',
         backgroundColor: '#6D7574',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
     },
     gastos: {
         height: 390,
@@ -68,45 +69,7 @@ export const styles = StyleSheet.create({
         borderRadius: 25,
         padding: 20,
     },
-    dia: {
-        height: 30,
-        width: '20%',
-        backgroundColor: '#EBE789',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderTopStartRadius: 10,
-        borderBottomLeftRadius: 10,
-    },
-    semana: {
-        height: 30,
-        width: '20%',
-        backgroundColor: '#48472A',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    mes: {
-        height: 30,
-        width: '20%',
-        backgroundColor: '#48472A',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    ano: {
-        height: 30,
-        width: '20%',
-        backgroundColor: '#48472A',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    periodo: {
-        height: 30,
-        width: '20%',
-        backgroundColor: '#48472A',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderBottomEndRadius: 10,
-        borderTopEndRadius: 10,
-    },
+    
     eclipse: {
         width: 205,
         height: 205,

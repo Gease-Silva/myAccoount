@@ -1,72 +1,84 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, Image, TouchableOpacity, CheckBox } from 'react-native';
-import { stylesGeral } from '../styleGeral.js';
-import { useState } from 'react';
-import Button from '../componentes/button';
-import TxtInput from '../componentes/input';
+import { View } from "react-native-web";
+import styles from "./styles";
+import Label from "../../componentes/label";
+import Input from "../../componentes/input";
+import Button from "../../componentes/button";
 
-export default function app({ navigation }) {
+export default function signup({ navigation }) {
 
     function openSuccess() {
-        navigation.navigate('SuccessSignup');
-      }
+        navigation.navigate('SignupSuccess');
+    }
 
     return (
-        <View style={stylesGeral.container}>
-            <View>
-                <Text style={[stylesGeral.texto, stylesGeral.titulo]}>
-                    Cadastrar-se
-                </Text>
-                <Text style={stylesGeral.texto}>
-                    Com o seu e-mail e senha.
-                </Text>
+
+        <View style={styles.background}>
+
+            <Label
+                texto='Cadastra-se'
+                type='titulo' />
+
+            <View style={{ marginBottom: 20 }}></View>
+
+            <Label
+                texto='Com seu e-mail e senha'
+                type='subTitulo' />
+
+            <View style={{ marginBottom: 30 }}></View>
+
+            <Label
+                texto='Como é o seu nome?'
+                type='corpo' />
+
+            <Input
+                type='primary'
+                placeholder='Nome'
+            />
+
+            <Label
+                texto='Qual o seu CPF?'
+                type='corpo' />
+
+            <Input
+                type='primary'
+                placeholder='CPF'
+            />
+
+            <Label
+                texto='Digite o seu e-mail'
+                type='corpo' />
+
+            <Input
+                type='primary'
+                placeholder='E-mail' />
+
+            <Label
+                texto='Digite sua senha'
+                type='corpo' />
+
+            <Input
+                type='primary'
+                placeholder='Senha' />
+
+            <Label
+                texto='Confirme sua senha'
+                type='corpo' />
+
+            <Input
+                type='primary'
+                placeholder='Senha' />
+
+            <View style={{ alignItems: 'center' }}>
+
+                <Button
+                    onPress={openSuccess}
+                    type='primary'
+                    text='Cadastrar' />
+
             </View>
-            <View>
-                <View style={stylesGeral.esquerda}>
-                    <Text style={[stylesGeral.texto]}>Digite o seu nome:</Text>
-                    <TxtInput
-                        type="primary"
-                        text='Nome'
-                    />
-                </View>
-                <View style={stylesGeral.esquerda}>
-                    <Text style={[stylesGeral.texto]}>Digite o seu CPF:</Text>
-                    <TxtInput
-                        type="primary"
-                        text='CPF'
-                        keyboardType="numeric"
-                    />
-                </View>
-                <View style={stylesGeral.esquerda}>
-                    <Text style={[stylesGeral.texto]}>Digite o seu E-mail:</Text>
-                    <TxtInput
-                        type="primary"
-                        text='E-mail'
-                    />
-                </View>
-                <View style={stylesGeral.esquerda}>
-                    <Text style={[stylesGeral.texto]}>Digite uma senha:</Text>
-                    <TxtInput
-                        type="primary"
-                        text='Senha'
-                        keyboardType="visible-password"
-                    />
-                </View>
-                <View style={stylesGeral.esquerda}>
-                    <Text style={[stylesGeral.texto]}>Confirme sua senha:</Text>
-                    <TxtInput
-                        type="primary"
-                        text='Senha'
-                        keyboardType="visible-password"
-                    />
-                </View>
-                <View style={{ alignItems: 'center' }}>
-                    <Button
-                        onPress={openSuccess}
-                        text="Cadastrar-se"
-                        type="primary" />
-                </View>
-            </View>
+
         </View>
-    );
+
+    )
+
 }

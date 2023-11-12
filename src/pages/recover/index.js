@@ -1,59 +1,68 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, Image, TouchableOpacity, CheckBox } from 'react-native';
-import { stylesGeral } from '../styleGeral.js';
-import { styles } from './styles.js';
-import { useState } from 'react';
-import Button from '../componentes/button';
-import TxtInput from '../componentes/input';
-import Txt from '../componentes/text';
+
+import { Text, View, Image } from 'react-native';
+import styles from './styles.js';
+import Button from '../../componentes/button/index.js';
+import Input from '../../componentes/input/index.js';
+import Img from '../../componentes/img/index.js';
+import Label from '../../componentes/label/index.js';
 
 export default function app({ navigation }) {
 
     function openSuccess() {
-        navigation.navigate('SuccessRecover');
-      }
+        navigation.navigate('RecoverSuccess');
+    }
 
     return (
-        <View style={stylesGeral.container}>
-            <View>
-                <Image
-                    source={require('../../../assets/logo.png')}
-                    style={styles.imagem}
-                />
-                <Text style={[stylesGeral.texto, stylesGeral.titulo]}>
-                    Esqueci minha senha:
-                </Text>
-            </View>
-            <View>
-                <View style={stylesGeral.esquerda}>
-                    <Text style={[stylesGeral.texto]}>Digite o seu nome:</Text>
-                    <TxtInput
-                        type="primary"
-                        text='Nome'
-                    />
-                </View>
-                <View style={stylesGeral.esquerda}>
-                    <Text style={[stylesGeral.texto]}>Digite o seu CPF:</Text>
-                    <TxtInput 
-                        type="primary"
-                        text='CPF'
-                        keyboardType="numeric"
-                    />
-                </View>
-                <View style={stylesGeral.esquerda}>
-                    <Text style={[stylesGeral.texto]}>Digite o seu E-mail:</Text>
-                    <TxtInput
-                        type="primary"
-                        text='E-mail'
-                    />
-                </View>
-                <View style={{alignItems: 'center'}}>
-                    <Button
+        <View style={styles.background}>
+
+            <Img
+                type='logo' />
+
+            <Label
+                type='subTitulo'
+                texto='Esqueci minha senha:'
+            />
+
+
+            <Label
+                type='corpo'
+                texto='Digite o seu nome' />
+
+            <Input
+                type="primary"
+                placeholder='Nome'
+            />
+
+            <Label
+                texto='Digite o seu CPF:'
+                type='corpo'
+            />
+            <Input
+                type="primary"
+                placeholder='CPF'
+                keyboardType="numeric"
+            />
+
+            <Label
+                texto='Digite o seu E-mai'
+                type='corpo'
+            />
+            
+            
+            <Input
+                type='primary'
+                placeholder='E-mail'
+            />
+
+
+            <View style={{ alignItems: 'center' }}>
+
+                <Button
                     onPress={openSuccess}
-                        text="Enviar"
-                        type="primary" />
-                </View>
+                    text="Enviar"
+                    type="primary" />
             </View>
+
         </View>
     );
 }
